@@ -281,7 +281,7 @@ app.MapPut("/veiculos/{id}", ([FromRoute] int id, VeiculoDTO veiculoDTO, IVeicul
     veiculoServico.AtualizarVeiculo(veiculo);
 
     return Results.Ok(veiculo);
-}).RequireAuthorization().
+}).RequireAuthorization()
 .RequireAuthorization(new AuthorizeAttribute { Roles = "Adm" })
 .WithTags("Veículos");
 
